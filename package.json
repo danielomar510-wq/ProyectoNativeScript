@@ -15,6 +15,11 @@
     "@nativescript/angular": "^18.0.0",
     "@nativescript/core": "~9.0.0",
     "@nativescript/theme": "^3.1.0",
+    "@ngrx/effects": "^21.1.0",
+    "@ngrx/store": "^21.1.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "nativescript-sqlite": "^2.8.6",
     "nativescript-ui-sidedrawer": "~15.2.0",
     "rxjs": "~7.8.0",
     "zone.js": "~0.14.0"

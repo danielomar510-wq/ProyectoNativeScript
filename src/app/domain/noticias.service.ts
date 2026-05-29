@@ -1,9 +1,27 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
+import { Http } from "@nativescript/core";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class NoticiasService {
-  // Aquí el tipo guardará los métodos para jalar noticias más adelante
-  constructor() { }
+
+    api: string = "http://localhost:3000";
+
+agregar(s: string) {
+        return Http.request({
+            url: this.api + "/favs",
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            content: JSON.stringify({
+                nuevo: s
+            })
+        });
+    }
+
+    favs() {
+        return Http.getJSON(this.api + "/favs");
+    }
+
+    buscar(s: string) {
+        return Http.getJSON(this.api + "/get?q=" + s);
+    }
 }
